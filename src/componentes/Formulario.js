@@ -8,14 +8,22 @@ const FormularioAgregarContacto = () => {
     const [nombre, cambiarNombre] = useState('');
     const [correo, cambiarCorreo] = useState('');
 
-   const onSubmit = (e) => {
+    // una vez que la operación termina, pasa a los 2 métodos
+   const onSubmit = async (e) => {
        e.preventDefault();
 
        // que coleccion (pide db y colección a usar)y objeto que tiene la informacion a agregar
-       addDoc(collection(db, 'usuarios'), {
-           nombre: nombre,
-           correo: correo
-       });
+       // función asincrona que se ejecuta al clickear el boton y
+       // devuelve promesa
+       try {
+           await addDoc(collection(db, 'usuarios'), {
+               nombre: nombre,
+               correo: correo
+           });
+       } catch(error){
+           console.log('Hubo un error al intentar guardar el documento.');
+           console.log(error);
+       }
 
        cambiarCorreo('');
        cambiarNombre('');
