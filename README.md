@@ -1,3 +1,8 @@
+# LISTA DE CONTACTOS
+Contact list is a website where you can have your own agenda with your contacts. It´s has the basic functions as add, modify and delete people from your list. First, will find a space with their information: name and email. Once you add a new contact, you´ll find it in a instant in the list below the form. This information is available in a local storage in your computer.
+
+This website was developed with React and Firebase.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
